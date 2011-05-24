@@ -9,7 +9,6 @@ public class AccessPoint
 	public AccessPoint(String bss, int sig, Location loc)
 	{
 		location = loc;
-
 		bssid = bss;
 		signal = sig;
 	}
