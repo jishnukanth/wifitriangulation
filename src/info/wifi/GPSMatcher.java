@@ -18,13 +18,37 @@ public class GPSMatcher
 //it then fills in the location data from the master list into the current list
 public void fillInLocations()
 {
-	
+	for (AccessPoint a: currentAP)
+	{
+		for (AccessPoint b: masterAP)
+		{
+			if (a.getBssid().equals(b.getBssid()))
+			{
+				a.setLocation(b.getLocation());
+			}
+		}
+	}
 }
 
-//
+public void removeNullLocations()
+{
+	fillInLocations();
+	for (int i = currentAP.size()-1; i >=0; i--)
+	{
+		if (currentAP.get(i).getBssid()==null)
+		{
+			currentAP.remove(i);
+		}
+	}
+}
 public Location determineLocation()
 {
-	
+	removeNullLocations();
+	ArrayList<AccessPoint> triPts = new ArrayList<AccessPoint>();
+	for (int i = 0; i < 3; i++)
+	{
+		triPts.add(currentAP.get(i));
+	}
 }
 	
 }
