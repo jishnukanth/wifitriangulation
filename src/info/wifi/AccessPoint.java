@@ -1,6 +1,6 @@
 package info.wifi;
 
-public class AccessPoint 
+public class AccessPoint implements Comparable
 {
 	private Location location;
 	private String bssid;
@@ -32,6 +32,17 @@ public class AccessPoint
     {
     	location = loc;
     }
+
+    //returns 1 if the signal is stronger
+	public int compareTo(AccessPoint a) 
+	{
+		if(getSignal()  >= a.getSignal())
+		{
+			return 1;
+		}
+		
+	return 0;
+	}
     
     
 }

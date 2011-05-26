@@ -1,6 +1,7 @@
 package info.wifi;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class GPSMatcher 
@@ -41,14 +42,16 @@ public void removeNullLocations()
 		}
 	}
 }
+
 public Location determineLocation()
 {
+	
+}
+
+public void sortBySignal()
+{
 	removeNullLocations();
-	ArrayList<AccessPoint> triPts = new ArrayList<AccessPoint>();
-	for (int i = 0; i < 3; i++)
-	{
-		triPts.add(currentAP.get(i));
-	}
+	Collections.sort(currentAP);
 }
 	
 }
