@@ -34,17 +34,20 @@ public class AccessPoint implements Comparable
     }
 
     //returns 1 if the signal is stronger
-	public int compareTo(AccessPoint a) 
+	public int compareTo(Object a) 
 	{
-		if(getSignal()  >= a.getSignal())
+		if(getSignal()  >= ((AccessPoint) a).getSignal())
 		{
-			return 1;
+			return 0;
 		}
 		
-	return 0;
+	return 1;
+	}
+
+
 	}
     
     
-}
+
 
 
