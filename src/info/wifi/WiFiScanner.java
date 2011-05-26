@@ -50,11 +50,13 @@ public class WiFiScanner
 		ArrayList<Integer> signalInt = new ArrayList<Integer>();
 		
 		
-		for(String str : ap)
+		for(int i = ap.size()-1; i >= 0; i--)
 		{
+			String str = ap.get(i);
+			
 			if(str.indexOf("BSSID") == -1 && str.indexOf("Signal") == -1)
 			{
-				ap.remove(str);
+				ap.remove(i);
 			}
 		}
 		
@@ -78,7 +80,7 @@ public class WiFiScanner
 		
 		for(int i = 0; i < bssid.size(); i++)
 		{
-			output.add(new AccessPoint(bssid.get(i),signalInt.get(i),new Location(-1000,-1000)));
+			output.add(new AccessPoint(bssid.get(i),signalInt.get(i),null));
 		}
 		
 		return output;
