@@ -21,6 +21,10 @@ public class Triangle
 		this.b = this.distanceBC();
 	}
 	
+	/**
+	 * Gets the a
+	 * @return
+	 */
 	public double getAngleARad()
 	{
 		double top = (Math.pow(this.a, 2) - Math.pow(this.b, 2) - Math.pow(this.c, 2));
@@ -119,5 +123,10 @@ public class Triangle
 	public double kmToMi(double km)
 	{
 		 return km * 0.621371192;
+	}
+	
+	public double signalToDistance(int signal)
+	{
+		return signal * 0.004;
 	}
 }
