@@ -134,6 +134,10 @@ public class Triangle
 	
 	public Location currentLocation()
 	{
+		double distanceA = new Double(aa.distanceFrom());
+		double distanceB = new Double(bb.distanceFrom());
+		double A = new Double(9999);
+		double B = new Double(9999);
 		
 	}
 	
