@@ -43,6 +43,12 @@ public class AccessPoint implements Comparable
 		
 	return 1;
 	}
+	
+	//returns distance from access point in km
+	public double distanceFrom()
+	{
+		return .004 * signal;
+	}
 
 
 	}
