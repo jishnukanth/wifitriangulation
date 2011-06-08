@@ -45,7 +45,9 @@ public void removeNullLocations()
 
 public Location determineLocation()
 {
-	
+	sortBySignal();
+	Triangle t = new Triangle (currentAP.get(0), currentAP.get(1),currentAP.get(2));
+	return t.currentLocation();
 }
 
 public void sortBySignal()
